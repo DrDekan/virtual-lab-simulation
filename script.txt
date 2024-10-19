@@ -1,0 +1,38 @@
+// script.js
+
+let titrantVolume = 0;
+let phValue = 7.0;
+
+const liquid = document.getElementById('liquid');
+const liquidLevel = document.getElementById('liquid-level');
+const phMeter = document.getElementById('ph-value');
+const addTitrantButton = document.getElementById('add-titrant');
+const resetButton = document.getElementById('reset');
+
+// Function to add titrant and update pH
+function addTitrant() {
+    titrantVolume += 5; // Increase volume by 5 mL each time
+
+    if (titrantVolume <= 50) {
+        liquid.style.height = `${titrantVolume * 2}%`; // Increase liquid level
+        liquidLevel.textContent = `Volume: ${titrantVolume} mL`;
+
+        // Simulate pH change based on titrant volume
+        phValue -= 0.2; // pH decreases as acid is added
+        phMeter.textContent = `pH: ${phValue.toFixed(1)}`;
+    }
+}
+
+// Function to reset the experiment
+function resetExperiment() {
+    titrantVolume = 0;
+    phValue = 7.0;
+
+    liquid.style.height = '0%'; // Reset liquid level
+    liquidLevel.textContent = 'Volume: 0 mL';
+    phMeter.textContent = 'pH: 7.0';
+}
+
+// Event listeners for buttons
+addTitrantButton.addEventListener('click', addTitrant);
+resetButton.addEventListener('click', resetExperiment);
