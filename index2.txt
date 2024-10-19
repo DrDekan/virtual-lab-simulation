@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Lab Simulation - Titration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Virtual Lab - Acid-Base Titration</h1>
+    <div id="lab-container">
+        <!-- Dropper to add titrant -->
+        <div id="dropper-container">
+            <button id="add-titrant">Add Titrant</button>
+        </div>
+
+        <!-- Beaker for experiment -->
+        <div id="beaker-container">
+            <div id="liquid">
+                <span id="liquid-level">Volume: 0 mL</span>
+            </div>
+        </div>
+
+        <!-- pH meter -->
+        <div id="ph-meter">
+            <span id="ph-value">pH: 7.0</span>
+        </div>
+
+        <!-- Reset button -->
+        <button id="reset">Reset Experiment</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
